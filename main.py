@@ -4,6 +4,7 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Опрелеляем силу атаки."""
     if char_class == 'warrior':
         damage_user = randint(3, 5)
     if char_class == 'mage':
@@ -15,6 +16,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Опрелеляем силу защиты."""
     if char_class == 'warrior':
         defence_user = randint(5, 10)
     if char_class == 'mage':
@@ -25,6 +27,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Опрелеляем силу специального умения."""
     if char_class == 'warrior':
         special_user = 80 + 25
     if char_class == 'mage':
@@ -37,6 +40,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Описание класса выбранного персонажа."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -62,6 +66,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Запрос имени и выбор персонажа."""
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
@@ -81,15 +86,13 @@ def choice_char_class() -> str:
                   'Черпает силы из природы, веры и духов.')
         approve_choice = input('Нажми (Y), чтобы подтвердить выбор, '
                                'или любую другую кнопку, '
-                               'чтобы выбрать другого персонажа '
+                               'чтобы выбрать другого персонажа ',
                                ).lower()
     return char_class
 
 
-#if __name__ == '__main__':
-
-
-def main() -> None:
+if __name__ == '__main__':
+#def main() -> None:
     run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
